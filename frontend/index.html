@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Codit</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 720px;
+      margin: 30px auto;
+      background: #f9f9f9;
+      color: #333;
+      padding: 0 15px;
+    }
+    header {
+      width: 100%;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      color: #0077cc;
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    input[type="search"] {
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      width: 180px;
+      transition: border-color 0.3s ease;
+    }
+    input[type="search"]:focus {
+      border-color: #0077cc;
+      outline: none;
+    }
+    button.add-post {
+      background: #0077cc;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-weight: 600;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      transition: background 0.3s ease;
+    }
+    button.add-post:hover {
+      background: #005fa3;
+    }
+    article.post {
+      background: white;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    article.post:hover {
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+    }
+     .post-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 10px;
+    }.tags {
+      background: #e1ecf4;
+      color: #39739d;
+      padding: 3px 8px;
+      border-radius: 3px;
+      margin-left: 6px;
+      font-weight: 600;
+      font-size: 0.8rem;
+      display: inline-block;
+    }.stats {
+      font-size: 0.85rem;
+      color: #444;
+    }
+    .authour{
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+    .time{
+      font-size: .5rem;
+    }
+    .details{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 5px;
+    }
+    .heed{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .msg{
+      font-size: 1rem;
+      color: #333;
+      display: block;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Codit</h1>
+    <nav>
+      <input type="search" placeholder="search for an idea..." />
+    </nav>
+  </header>
+
+    <button class="add-post">+ Add post</button>
+  <main>
+    <article class="post">
+    <div class="heed">
+      <div class="details">
+       By <span class="authour">name</span>
+        - <span class="time">20/29/2037</span>
+       </div>
+     <div class="stats">
+        <i class="fas fa-heart"></i>
+        <span class="likes">15</span>
+      </div>
+    </div>
+       <hr>
+       <div class="post-main">
+         hwjjsjsj qwbsbbe hshss
+       </div>
+       <div class="post-meta">
+        <p class="tags">#React</p>
+        <p class="tags">#JavaScript</p>
+      </div>
+    </article>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>
