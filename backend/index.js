@@ -21,6 +21,7 @@ mongoose.connect(process.env.MONGO_URL)
 .catch(err => console.log(err))
 
 app.get('/postes', (req, res) => {
+  console.log('codit get postes ===')
   res.json({word :'hello frombackend'})
 })
 /*  try {
