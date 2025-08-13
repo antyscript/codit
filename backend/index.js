@@ -20,5 +20,4 @@ app.get('/postes', (req, res) => {
   //   console.log('error #')
   // }
   
-  
   app.listen(3000, _ => console.log('hello in console'))
