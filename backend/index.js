@@ -16,18 +16,18 @@ const Post = mongoose.model('Post', {
   description: String,
   tags: [String]
 });
-mongoose.connect(procces.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL)
 .then(_ => console.log('conneting ... '))
 .catch(err => console.log(err))
 
 app.get('/postes', (req, res) => {
   res.json({word :'hello frombackend'})
 })
-  try {
+/*  try {
     const posts = await Post.find();
     res.json(posts)
   } catch (err) {
     console.log('error #')
   }
-  
+  */
   app.listen(3000, _ => console.log('hello in console'))
