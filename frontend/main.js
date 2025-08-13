@@ -4,7 +4,7 @@ articles = [];
 main.innerHTML = '<span class="msg">fetching content ...</span>';
 
 
- fetch('http://localhost:3000/postes').then(res => res.json())
+ fetch('https://coditbackend.onrender.com/postes').then(res => res.json())
  .then(data => main.innerHTML = JSON.stringify(data))
 // fetch('https://localhost:3000/postes')
 //   .then(res => res.json())
