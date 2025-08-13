@@ -11,6 +11,7 @@ const Postschema = require('./schema');
 app.get('/', (req, res) => {
   res.send('hello world')
 })
+
 //const Post = mongoose.model('Post', Postschema);
 //mongoose.connect('')
 //.then(_ => console.log('conneting ... '))
