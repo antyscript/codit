@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Codit</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+  *{
+   margin: 0;
+   padding: 0;
+  }
+  body{
+    background-color: #f5f5f5;
+  }
+  header {
+      width: 100%;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      color: #0077cc;
+      margin: 0;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin: 10px;
+    }
+ .add{
+      position: fixed;
+      top: 10vh;
+      right: 0;
+      left: 0;
+      margin: auto;
+      width: min(80%, 650px);
+      border:1px solid rgb(0,119,204,0.8);
+      border-radius: 8px;
+      height: 500px;
+      text-align: center;
+      box-shadow: 0 0 20px rgb(0,0,0,0.1);
+    }
+    form{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100%;
+    }
+    input, textarea{
+      border-radius: 8px;
+      border: 1px solid rgb(0,119,204,0.8);
+      outline: none;
+      padding: 7px;
+      margin: 5px 0;
+      box-shadow: 2px 2px 0px rgb(0,119,204,0.8);
+    }
+    input:hover, textarea:hover{
+      box-shadow: 0px 0px 0px;
+      transform: translate(2px, 2px);
+    }
+    label{
+      text-decoration: underline rgb(0,119,204,0.8);
+      color: #000;
+      text-transform: capitalize;
+    }
+    a{
+      display: inline-block;
+      transform: rotate(180deg);
+      text-decoration: none;
+      color: #0077cc;
+    }
+  </style>
+</head>
+<body>
+    <header>
+    <h1><a href="index.html">➦</a>  Codit</h1>
+  </header>
+  <main>
+     <div class="add">
+      <form method="post">
+      <label for="hisname">your name</label>
+      <input type="text" id="hisname" name="hisname" required minlength="3">
+      <label for="content">content</label>
+      <textarea dir="auto" name="content" id="content" cols="30" rows="10" required></textarea>
+      <label for="tags">tags</label>
+      <input type="text" id="tags" name="tags">
+      <label style="font-size: 0.7rem">password (for delete your post)</label>
+      <input type="password" required name="pass">
+      <input type="submit" value="Add new post" id="addpost">
+      </form>
+    </div>
+  </main>
+  <script>
+    
+    
+    document.querySelector('form')
+    .addEventListener('submit', async e => {
+      alert('1')
+      e.preventDefault();
+      
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData.entries());
+      const res = await fetch('http://localhost:3000/form', {
+        method:'POST',
+        headers: {'Content-type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+      window.location.href = 'index.html'
+      alert('2');
+      
+    })
+    
+    
+    
+    
+    
+  </script>
+</body>
+</html>
