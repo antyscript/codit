@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 const { Schema } = mongoose;
 const cors = require('cors');
-app.use(cors({ origin: '*'}))
+app.use(cors({ origin: 'https://codyit.vercel.app'}))
 
 
 
@@ -15,7 +15,6 @@ const Post = mongoose.model('Post', {
   likes: Number,
   description: String,
   tags: [String],
-  pass: String
 });
 mongoose.connect(process.env.MONGO_URL)
 .then(_ => console.log('conneting ... '))
@@ -35,7 +34,7 @@ app.get('/postes', async (req, res) => {
 
 app.post('/form', async (req,res)=>{
   try{
-  const { hisname, content, tags, pass } = req.body
+  const { hisname, content, tags } = req.body
   console.log('$$$$$$$$$$$$$$$$$$$$$$$')
   console.log(`name = ${hisname}`);
   console.log(`content = ${content}`);
@@ -47,8 +46,7 @@ app.post('/form', async (req,res)=>{
     time: new Date(), 
     likes: 0, 
     description: content, 
-    tags,
-    pass
+    tags
   })
   await newPost.save()
   

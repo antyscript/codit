@@ -13,7 +13,7 @@ main.innerHTML = '<span class="msg">fetching content ...</span>';
 //   main.innerHTML = JSON.stringify(data)}
 // }
 //   )
-fetch('http://localhost:3000/postes')
+fetch('https://coditbackend.onrender.com/postes')
   .then(res => res.json())
   .then(posts => {
     posts.map( post =>{
