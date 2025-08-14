@@ -16,9 +16,14 @@ const Post = mongoose.model('Post', {
   description: String,
   tags: [String],
 });
-mongoose.connect(process.env.MONGO_URL)
-.then(_ => console.log('conneting ... '))
-.catch(err => console.log(err))
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 10000
+})
+.then(() => console.log('✅ Connected to MongoDB'))
+.catch(err => console.error('❌ DB connection error:', err));
+
 
 app.get('/postes', async (req, res) => {
  try {
