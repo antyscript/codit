@@ -25,7 +25,7 @@ const formatted = post.time? new Date(post.time).toISOString().slice(0, 10).repl
         liked : localStorage.getItem('liked') || false
       }
       
-      let article = `<article class="post">
+      let article = `<article class="post" style="order: ${Math.random()}">
                       <div class="heed">
                         <div class="details">
                         By <span class="authour">${post.authour}</span>
