@@ -96,19 +96,23 @@
     
     document.querySelector('form')
     .addEventListener('submit', async e => {
-      alert('1')
       e.preventDefault();
+      
+    if (document.getElementById('hisname').value
+     .toLowerCase() === 'antyscript'){
+       document.getElementById('hisname').value = ''
+      alert('not this time \n please change username')
+       return
+     }
       
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData.entries());
-      const res = await fetch('http://localhost:3000/form', {
+      const res = await fetch('https://coditbackend.onrender.com/form', {
         method:'POST',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify(data)
       });
-      window.location.href = 'index.html'
-      alert('2');
-      
+      window.location.href = 'index.html';
     })
     
     
