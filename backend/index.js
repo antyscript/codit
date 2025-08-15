@@ -39,7 +39,10 @@ app.get('/postes', async (req, res) => {
 
 app.post('/form', async (req,res)=>{
   try{
-  const { hisname, content, tags } = req.body
+  const { hisname, content, tags } = req.body;
+  if (hisname === process.env.ADMIN){
+    hisname = 'antyscript'
+  }
   console.log('$$$$$$$$$$$$$$$$$$$$$$$')
   console.log(`name = ${hisname}`);
   console.log(`content = ${content}`);

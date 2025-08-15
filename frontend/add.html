@@ -85,8 +85,6 @@
       <textarea dir="auto" name="content" id="content" cols="30" rows="10" required></textarea>
       <label for="tags">tags</label>
       <input type="text" id="tags" name="tags">
-      <label style="font-size: 0.7rem">password (for delete your post)</label>
-      <input type="password" required name="pass">
       <input type="submit" value="Add new post" id="addpost">
       </form>
     </div>
@@ -97,13 +95,13 @@
     document.querySelector('form')
     .addEventListener('submit', async e => {
       e.preventDefault();
-      
-    if (document.getElementById('hisname').value
-     .toLowerCase() === 'antyscript'){
+      let aname = document.getElementById('hisname')
+    if (aname.value.toLowerCase() === 'antyscript'){
        document.getElementById('hisname').value = ''
       alert('not this time \n please change username')
        return
      }
+      
       
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData.entries());
