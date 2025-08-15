@@ -25,7 +25,7 @@ const formatted = post.time? new Date(post.time).toISOString().slice(0, 10).repl
         liked : localStorage.getItem('liked') || false
       }
       
-      let article = `<article class="post" style="order: ${Math.random()}">
+      let article = `<article class="post">
                       <div class="heed">
                         <div class="details">
                         By <span class="authour">${post.authour}</span>
@@ -44,7 +44,16 @@ const formatted = post.time? new Date(post.time).toISOString().slice(0, 10).repl
                   </article>`;
           articles.push(article)
     });
-      main.innerHTML = articles.join('')
+    
+       function shuffleArray(arr) {
+       for (let i = arr.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+          [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+       return arr;
+    }    
+     let content = shuffleArray(articles)
+      main.innerHTML = content.join('')
   }).catch(err => {
     main.innerHTML = '<span class="msg">Server data fetch error or connection problem</span>';
     console.log(err)
